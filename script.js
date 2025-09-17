@@ -72,13 +72,16 @@ document.querySelectorAll("section > div > div").forEach((el) => {
 const DemoBtn = document.querySelector("#openVideoBtn");
 const overLay = document.querySelector(".videoOverlay");
 const closeBtn = document.querySelector(".close-btn");
+const video = overLay.querySelector("video");
 DemoBtn.addEventListener("click", () => {
   overLay.classList.remove("hidden"); // show overlay
   document.body.classList.add("overflow-hidden");
+  video.play();
 });
 closeBtn.addEventListener("click", (ev) => {
   ev.stopPropagation();
-  console.log("YES ");
   overLay.classList.add("hidden"); // hide overlay
+  video.pause(); // pause video playback
+  video.currentTime = 0;
   document.body.classList.remove("overflow-hidden");
 });
