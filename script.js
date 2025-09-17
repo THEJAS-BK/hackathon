@@ -68,3 +68,17 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll("section > div > div").forEach((el) => {
   observer.observe(el);
 });
+//video code
+const DemoBtn = document.querySelector("#openVideoBtn");
+const overLay = document.querySelector(".videoOverlay");
+const closeBtn = document.querySelector(".close-btn");
+DemoBtn.addEventListener("click", () => {
+  overLay.classList.remove("hidden"); // show overlay
+  document.body.classList.add("overflow-hidden");
+});
+closeBtn.addEventListener("click", (ev) => {
+  ev.stopPropagation();
+  console.log("YES ");
+  overLay.classList.add("hidden"); // hide overlay
+  document.body.classList.remove("overflow-hidden");
+});

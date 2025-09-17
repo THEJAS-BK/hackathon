@@ -71,3 +71,8 @@ body {
 .stagger-4 {
   animation-delay: 0.4s;
 }
+/* video  */
+
+.close-btn:hover {
+  color: red;
+}

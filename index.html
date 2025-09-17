@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>National Memory Infrastructure - India's Digital Brain</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -52,6 +59,29 @@
         </div>
       </div>
     </nav>
+    <!-- Overlay -->
+
+    <div
+      class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50 videoOverlay"
+    >
+      <div class="relative w-full max-w-3xl">
+        <button
+          id="closeBtn"
+          class="absolute top-2 right-2 text-white text-3xl font-bold close-btn z-50"
+        >
+          ✖
+        </button>
+        <video
+          class="rounded-xl shadow-lg w-full z-40"
+          controls
+          autoplay
+          muted
+          loop
+        >
+          <source src="video/NMI.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
 
     <!-- Hero Section -->
     <section
@@ -81,7 +111,8 @@
                 Explore the Memory
               </button>
               <button
-                class="px-6 py-3 bg-purple-600 text-white font-medium rounded-lg shadow hover:bg-purple-700 transition"
+                id="openVideoBtn"
+                class="px-6 py-3 bg-purple-600 text-white font-medium rounded-lg shadow hover:bg-purple-700 transition demo-btn"
               >
                 Watch Demo
               </button>
